@@ -4,15 +4,7 @@ import ListaSupensa from '../ListaSupensa'
 import Botao from '../Botão'
 import { useState } from 'react'
 const Formulario = (props) => {
-    const times = [
-        'Programação',
-        'Front-End',
-        'Data-Seience',
-        'Devops',
-        'Ux e Designer',
-        'Inovação e Gestão'
     
-      ]
 
     const [nome,setNome]= useState('')
     const [cargo,setCargo]= useState('')
@@ -27,6 +19,10 @@ const Formulario = (props) => {
             imagem,
             time
         })
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTime('')
       }
     return(
         <section className='form'>
@@ -59,7 +55,7 @@ const Formulario = (props) => {
             <ListaSupensa 
             obrigatorio={true}
              label='Time'
-             itens={times}
+             itens={props.times}
              valor={time}
              alterado={valor => setTime(valor)}
              
